@@ -1,0 +1,3 @@
+package Arrays;
+import java.util.*;
+public class prefix_sum { public static void main(String[] args) {int num[]={1,-2,6,-1,5};sum(num);}public static void sum(int num[]){int cursum=0;int maxsum=Integer.MIN_VALUE;int prefix[]=new int[num.length];prefix[0]=num[0];for (int i = 1; i <num.length ; i++) {prefix[i]=prefix[i-1]+num[i];}for (int i = 0; i < num.length; i++) {for (int j = 0; j < num.length; j++) {cursum=i==0?prefix[j]:prefix[j]-prefix[i-1];}if(maxsum<cursum){maxsum=cursum;}}System.out.println(maxsum);}}
